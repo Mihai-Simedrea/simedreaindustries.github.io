@@ -4,6 +4,8 @@ interface NavbarProps {
   onCta: () => void
 }
 
+const BASE = import.meta.env.BASE_URL
+
 export default function Navbar({ onCta }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -49,10 +51,9 @@ export default function Navbar({ onCta }: NavbarProps) {
           height: 72,
         }}
       >
-        {/* Logo */}
         <a href="#hero" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
           <img
-            src="/logo.svg"
+            src={`${BASE}logo.svg`}
             alt="Simedrea Industries"
             style={{
               height: 26,
@@ -63,28 +64,15 @@ export default function Navbar({ onCta }: NavbarProps) {
           />
         </a>
 
-        {/* Desktop nav links */}
         <ul
-          style={{
-            display: 'flex',
-            gap: '2rem',
-            listStyle: 'none',
-            margin: 0,
-            padding: 0,
-          }}
+          style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}
           className="simedrea-nav-desktop"
         >
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                style={{
-                  fontSize: 14,
-                  color: linkColor,
-                  textDecoration: 'none',
-                  fontWeight: 400,
-                  transition: 'color 0.2s',
-                }}
+                style={{ fontSize: 14, color: linkColor, textDecoration: 'none', fontWeight: 400, transition: 'color 0.2s' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = linkHoverColor)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = linkColor)}
               >
@@ -94,22 +82,14 @@ export default function Navbar({ onCta }: NavbarProps) {
           ))}
         </ul>
 
-        {/* Right side: CTA + Hamburger */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
           <button
             onClick={onCta}
             style={{
-              background: 'var(--orange)',
-              color: '#fff',
-              border: 'none',
-              padding: '10px 22px',
-              borderRadius: 7,
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 14,
-              fontWeight: 500,
-              cursor: 'pointer',
-              transition: 'background 0.2s',
-              whiteSpace: 'nowrap',
+              background: 'var(--orange)', color: '#fff', border: 'none',
+              padding: '10px 22px', borderRadius: 7,
+              fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500,
+              cursor: 'pointer', transition: 'background 0.2s', whiteSpace: 'nowrap',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--orange-dark)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--orange)')}
@@ -118,18 +98,9 @@ export default function Navbar({ onCta }: NavbarProps) {
             Obține un demo gratuit
           </button>
 
-          {/* Hamburger — mobile only */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              display: 'none',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: 4,
-              flexDirection: 'column',
-              gap: 5,
-            }}
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 4, flexDirection: 'column', gap: 5 }}
             aria-label="Deschide meniu"
             aria-expanded={menuOpen}
             className="simedrea-hamburger"
@@ -138,20 +109,13 @@ export default function Navbar({ onCta }: NavbarProps) {
               <span
                 key={i}
                 style={{
-                  display: 'block',
-                  width: 22,
-                  height: 2,
+                  display: 'block', width: 22, height: 2,
                   background: scrolled ? '#0A3D33' : '#ffffff',
-                  borderRadius: 2,
-                  transition: 'all 0.25s ease',
+                  borderRadius: 2, transition: 'all 0.25s ease',
                   transform:
-                    menuOpen && i === 0
-                      ? 'rotate(45deg) translate(5px, 5px)'
-                      : menuOpen && i === 1
-                      ? 'scaleX(0)'
-                      : menuOpen && i === 2
-                      ? 'rotate(-45deg) translate(5px, -5px)'
-                      : 'none',
+                    menuOpen && i === 0 ? 'rotate(45deg) translate(5px, 5px)' :
+                    menuOpen && i === 1 ? 'scaleX(0)' :
+                    menuOpen && i === 2 ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
                 }}
               />
             ))}
@@ -159,7 +123,6 @@ export default function Navbar({ onCta }: NavbarProps) {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
       <div
         style={{
           overflow: 'hidden',
@@ -177,35 +140,20 @@ export default function Navbar({ onCta }: NavbarProps) {
               href={l.href}
               onClick={() => setMenuOpen(false)}
               style={{
-                display: 'block',
-                padding: '13px 0',
-                fontSize: 16,
-                color: '#1A1A18',
-                textDecoration: 'none',
-                borderBottom: '1px solid rgba(10,61,51,0.06)',
-                fontWeight: 400,
+                display: 'block', padding: '13px 0', fontSize: 16,
+                color: '#1A1A18', textDecoration: 'none',
+                borderBottom: '1px solid rgba(10,61,51,0.06)', fontWeight: 400,
               }}
             >
               {l.label}
             </a>
           ))}
           <button
-            onClick={() => {
-              setMenuOpen(false)
-              onCta()
-            }}
+            onClick={() => { setMenuOpen(false); onCta() }}
             style={{
-              marginTop: 20,
-              width: '100%',
-              background: 'var(--orange)',
-              color: '#fff',
-              border: 'none',
-              padding: '15px 0',
-              borderRadius: 7,
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 15,
-              fontWeight: 500,
-              cursor: 'pointer',
+              marginTop: 20, width: '100%', background: 'var(--orange)', color: '#fff',
+              border: 'none', padding: '15px 0', borderRadius: 7,
+              fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 500, cursor: 'pointer',
             }}
           >
             Obține un demo gratuit

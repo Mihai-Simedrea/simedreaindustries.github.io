@@ -5,6 +5,8 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ]
 
+const BASE = import.meta.env.BASE_URL
+
 export default function Footer() {
   return (
     <footer
@@ -25,70 +27,32 @@ export default function Footer() {
           gap: 24,
         }}
       >
-        {/* Logo + copyright */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column' as const,
-            gap: 10,
-          }}
-        >
+        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10 }}>
           <img
-            src="/logo.svg"
+            src={`${BASE}logo.svg`}
             alt="Simedrea Industries"
-            style={{
-              height: 20,
-              width: 'auto',
-              opacity: 0.25,
-              filter: 'invert(1)',
-            }}
+            style={{ height: 20, width: 'auto', opacity: 0.25, filter: 'invert(1)' }}
           />
-          <span style={{ fontSize: 13 }}>Simedrea Industries © 2022-2026</span>
+          <span style={{ fontSize: 13 }}>Simedrea Industries © 2026</span>
         </div>
 
-        {/* Nav links */}
-        <nav
-          style={{
-            display: 'flex',
-            gap: 20,
-            flexWrap: 'wrap' as const,
-            alignItems: 'center',
-          }}
-        >
+        <nav style={{ display: 'flex', gap: 20, flexWrap: 'wrap' as const, alignItems: 'center' }}>
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              style={{
-                fontSize: 13,
-                color: 'rgba(255,255,255,0.28)',
-                textDecoration: 'none',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')
-              }
+              style={{ fontSize: 13, color: 'rgba(255,255,255,0.28)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')}
             >
               {l.label}
             </a>
           ))}
           <a
             href="mailto:hello@simedreaindustries.com"
-            style={{
-              fontSize: 13,
-              color: 'rgba(255,255,255,0.28)',
-              textDecoration: 'none',
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')
-            }
+            style={{ fontSize: 13, color: 'rgba(255,255,255,0.28)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')}
           >
             hello@simedreaindustries.com
           </a>
