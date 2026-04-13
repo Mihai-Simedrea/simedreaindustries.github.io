@@ -1,0 +1,159 @@
+interface HeroProps {
+  onCta: () => void
+}
+
+export default function Hero({ onCta }: HeroProps) {
+  return (
+    <section
+      id="hero"
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        padding: '120px 5vw 80px',
+        background: 'linear-gradient(150deg, #072E26 0%, #0A3D33 45%, #0D4A3C 100%)',
+      }}
+    >
+      {/* Subtle dot grid */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage:
+            'radial-gradient(circle at 1.5px 1.5px, rgba(255,255,255,0.045) 1.5px, transparent 0)',
+          backgroundSize: '40px 40px',
+          zIndex: 0,
+        }}
+      />
+
+      {/* Warm glow — bottom right */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: -160,
+          right: -100,
+          width: 700,
+          height: 700,
+          background:
+            'radial-gradient(circle, rgba(201,99,58,0.13) 0%, transparent 65%)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Cool glow — top left */}
+      <div
+        style={{
+          position: 'absolute',
+          top: -80,
+          left: -80,
+          width: 500,
+          height: 500,
+          background:
+            'radial-gradient(circle, rgba(15,81,68,0.4) 0%, transparent 70%)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Content */}
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 760 }}>
+        <span
+          style={{
+            display: 'inline-block',
+            background: 'rgba(255,255,255,0.07)',
+            border: '1px solid rgba(255,255,255,0.13)',
+            color: 'rgba(255,255,255,0.7)',
+            padding: '6px 18px',
+            borderRadius: 100,
+            fontSize: 13,
+            fontWeight: 400,
+            marginBottom: 32,
+            letterSpacing: '0.4px',
+          }}
+        >
+          Website-uri pentru restaurante
+        </span>
+
+        <h1
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)',
+            color: '#ffffff',
+            lineHeight: 1.18,
+            fontWeight: 700,
+            marginBottom: 28,
+          }}
+        >
+          Construim website-uri care transformă{' '}
+          <em style={{ fontStyle: 'italic', color: '#E8C07A' }}>
+            vizitatorii în rezervări.
+          </em>
+        </h1>
+
+        <p
+          style={{
+            fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
+            color: 'rgba(255,255,255,0.62)',
+            lineHeight: 1.78,
+            marginBottom: 48,
+            fontWeight: 300,
+            maxWidth: 560,
+          }}
+        >
+          Website modern, meniu digital și sistem de rezervări — totul livrat
+          în 48 de ore, fără să ridici un deget.
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: 16,
+          }}
+        >
+          <button
+            onClick={onCta}
+            style={{
+              background: 'var(--orange)',
+              color: '#fff',
+              border: 'none',
+              padding: '18px 40px',
+              borderRadius: 8,
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 16,
+              fontWeight: 500,
+              cursor: 'pointer',
+              transition: 'all 0.22s ease',
+              letterSpacing: '0.2px',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--orange-dark)'
+              e.currentTarget.style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'var(--orange)'
+              e.currentTarget.style.transform = 'translateY(0)'
+            }}
+          >
+            Obține un demo gratuit
+          </button>
+
+          <p
+            style={{
+              fontSize: 13,
+              color: 'rgba(255,255,255,0.38)',
+              fontWeight: 300,
+              margin: 0,
+            }}
+          >
+            Fără cunoștințe tehnice. Noi ne ocupăm de tot.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
