@@ -19,20 +19,14 @@ export default function FloatingCTA({ onCta }: FloatingCTAProps) {
     <>
       <button
         onClick={onCta}
-        aria-label="Obține un demo gratuit"
+        aria-label="Arată-mi cum să nu mai pierd clienți"
         style={{
           position: 'fixed',
-          bottom: 24,
-          right: 20,
+          bottom: 24, right: 20,
           zIndex: 90,
-          background: 'var(--orange)',
-          color: '#fff',
-          border: 'none',
-          padding: '14px 22px',
-          borderRadius: 100,
-          fontFamily: "'DM Sans', sans-serif",
-          fontSize: 14,
-          fontWeight: 500,
+          background: 'var(--orange)', color: '#fff', border: 'none',
+          padding: '14px 22px', borderRadius: 100,
+          fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500,
           cursor: 'pointer',
           boxShadow: '0 4px 24px rgba(201,99,58,0.38)',
           transition: 'opacity 0.3s ease, transform 0.3s ease',
@@ -43,14 +37,12 @@ export default function FloatingCTA({ onCta }: FloatingCTAProps) {
         }}
         className="simedrea-float-cta"
       >
-        Demo gratuit →
+        Arată-mi cum →
       </button>
 
       <style>{`
         @media (max-width: 768px) {
-          .simedrea-float-cta {
-            display: block !important;
-          }
+          .simedrea-float-cta { display: block !important; }
         }
       `}</style>
     </>

@@ -1,18 +1,15 @@
 const solutions = [
   {
-    tag: 'Website modern',
-    title: 'Design care inspiră încredere',
-    body: 'Un site rapid, elegant și optimizat pentru mobil. Prezintă restaurantul cum merită — cu fotografii, atmosferă și personalitate proprie.',
+    tag: 'Rezervări online',
+    title: 'Restaurantul tău lucrează și când tu nu ești acolo.',
+  },
+  {
+    tag: 'Prezență digitală',
+    title: 'Prima impresie se formează înainte ca ei să-ți treacă pragul.',
   },
   {
     tag: 'Meniu digital',
-    title: 'Meniu actualizabil oricând',
-    body: 'Schimbi prețurile sau adaugi un fel nou? Un mesaj și e gata. Fără agenții, fără costuri suplimentare, fără zile de așteptare.',
-  },
-  {
-    tag: 'Rezervări online',
-    title: 'Sistem simplu de rezervare',
-    body: 'Clienții rezervă direct de pe site, în 30 de secunde. Tu primești notificarea instant. Nicio masă pierdută din lipsă de răspuns.',
+    title: 'Ce promiți online e exact ce găsesc la masă.',
   },
 ]
 
@@ -48,7 +45,7 @@ export default function SolutionSection() {
               margin: 0,
             }}
           >
-            Nu vindem site-uri.
+            Construim prezența digitală
           </h2>
           <h2
             style={{
@@ -61,7 +58,7 @@ export default function SolutionSection() {
               margin: 0,
             }}
           >
-            Vindem rezervări.
+            pe care restaurantul tău o merită.
           </h2>
         </div>
 
@@ -82,15 +79,16 @@ export default function SolutionSection() {
                 padding: '40px 32px',
                 position: 'relative' as const,
                 overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column' as const,
+                gap: 16,
               }}
             >
               {/* Top accent line */}
               <div
                 style={{
                   position: 'absolute' as const,
-                  top: 0,
-                  left: 0,
-                  right: 0,
+                  top: 0, left: 0, right: 0,
                   height: 3,
                   background: 'var(--green)',
                   opacity: 0.12,
@@ -107,7 +105,7 @@ export default function SolutionSection() {
                   fontSize: 12,
                   fontWeight: 500,
                   letterSpacing: '0.3px',
-                  marginBottom: 20,
+                  alignSelf: 'flex-start',
                 }}
               >
                 {s.tag}
@@ -116,26 +114,16 @@ export default function SolutionSection() {
               <h3
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: '1.2rem',
+                  fontSize: 'clamp(1.2rem, 1.6vw, 1.4rem)',
                   color: 'var(--text)',
                   fontWeight: 700,
-                  marginBottom: 12,
-                  lineHeight: 1.3,
+                  lineHeight: 1.35,
+                  margin: 0,
+                  letterSpacing: '-0.01em',
                 }}
               >
                 {s.title}
               </h3>
-
-              <p
-                style={{
-                  fontSize: '0.92rem',
-                  color: 'var(--muted)',
-                  lineHeight: 1.72,
-                  margin: 0,
-                }}
-              >
-                {s.body}
-              </p>
             </div>
           ))}
         </div>

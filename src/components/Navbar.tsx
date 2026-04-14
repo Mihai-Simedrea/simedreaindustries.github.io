@@ -30,9 +30,7 @@ export default function Navbar({ onCta }: NavbarProps) {
     <nav
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
+        top: 0, left: 0, right: 0,
         zIndex: 100,
         backgroundColor: scrolled ? 'rgba(250,245,237,0.96)' : 'transparent',
         backdropFilter: scrolled ? 'blur(14px)' : 'none',
@@ -56,8 +54,7 @@ export default function Navbar({ onCta }: NavbarProps) {
             src={`${BASE}logo.svg`}
             alt="Simedrea Industries"
             style={{
-              height: 26,
-              width: 'auto',
+              height: 26, width: 'auto',
               filter: scrolled ? 'none' : 'brightness(0) invert(1)',
               transition: 'filter 0.35s ease',
             }}
@@ -95,7 +92,7 @@ export default function Navbar({ onCta }: NavbarProps) {
             onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--orange)')}
             className="simedrea-nav-cta"
           >
-            Obține un demo gratuit
+            Arată-mi cum să nu mai pierd clienți
           </button>
 
           <button
@@ -156,7 +153,7 @@ export default function Navbar({ onCta }: NavbarProps) {
               fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 500, cursor: 'pointer',
             }}
           >
-            Obține un demo gratuit
+            Arată-mi cum să nu mai pierd clienți
           </button>
         </div>
       </div>

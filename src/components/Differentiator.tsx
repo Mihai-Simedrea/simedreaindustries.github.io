@@ -40,7 +40,7 @@ export default function Differentiator() {
             border: 'none',
           }}
         >
-          Nu ai nevoie de cunoștințe tehnice. Ne ocupăm noi de tot.
+          Nu ai nevoie de cunoștințe tehnice. Nu ai nevoie de timp. Ai nevoie doar de un răspuns la acest email.
         </blockquote>
       </div>
     </section>
