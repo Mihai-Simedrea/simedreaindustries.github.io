@@ -5,7 +5,7 @@ const solutions = [
   },
   {
     tag: 'Prezență digitală',
-    title: 'Prima impresie se formează înainte ca ei să-ți treacă pragul.',
+    title: 'Prima impresie se formează online.',
   },
   {
     tag: 'Meniu digital',
@@ -84,7 +84,6 @@ export default function SolutionSection() {
                 gap: 16,
               }}
             >
-              {/* Top accent line */}
               <div
                 style={{
                   position: 'absolute' as const,
@@ -94,7 +93,6 @@ export default function SolutionSection() {
                   opacity: 0.12,
                 }}
               />
-
               <span
                 style={{
                   display: 'inline-block',
@@ -110,7 +108,6 @@ export default function SolutionSection() {
               >
                 {s.tag}
               </span>
-
               <h3
                 style={{
                   fontFamily: "'Playfair Display', serif",

@@ -21,10 +21,6 @@ export default function Hero({ onCta }: HeroProps) {
       <div style={{ position: 'absolute', top: -80, left: -80, width: 500, height: 500, background: 'radial-gradient(circle, rgba(15,81,68,0.4) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }} />
 
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 760 }}>
-        <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.13)', color: 'rgba(255,255,255,0.75)', padding: '6px 18px', borderRadius: 100, fontSize: 13, fontWeight: 400, marginBottom: 32, letterSpacing: '0.4px' }}>
-          Website-uri pentru restaurante
-        </span>
-
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)', color: '#ffffff', lineHeight: 1.18, fontWeight: 700, marginBottom: 28 }}>
           Se pare că lași concurența să-ți fure clienții,{' '}
           <em style={{ fontStyle: 'italic', color: '#E8C07A' }}>
