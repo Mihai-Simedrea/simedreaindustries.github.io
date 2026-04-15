@@ -49,12 +49,12 @@ export default function Footer() {
             </a>
           ))}
           <a
-            href="mailto:hello@simedreaindustries.com"
+            href="mailto:mihai.nicolae.simedrea@gmail.com"
             style={{ fontSize: 13, color: 'rgba(255,255,255,0.28)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')}
           >
-            hello@simedreaindustries.com
+            mihai.nicolae.simedrea@gmail.com
           </a>
         </nav>
       </div>

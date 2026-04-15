@@ -57,12 +57,12 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
         </p>
 
         <a
-          href="mailto:hello@simedreaindustries.com?subject=Arată-mi cum să nu mai pierd clienți"
+          href="mailto:mihai.nicolae.simedrea@gmail.com?subject=Arată-mi cum să nu mai pierd clienți"
           style={{ display: 'inline-block', background: 'var(--green)', color: '#fff', textDecoration: 'none', padding: '14px 32px', borderRadius: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 500, transition: 'all 0.2s ease', marginBottom: 16 }}
           onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--green-mid)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
           onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--green)'; e.currentTarget.style.transform = 'translateY(0)' }}
         >
-          hello@simedreaindustries.com
+          mihai.nicolae.simedrea@gmail.com
         </a>
 
         <p style={{ fontSize: 12, color: 'rgba(10,61,51,0.38)', margin: 0 }}>
